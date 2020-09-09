@@ -26,11 +26,11 @@ if os.path.isfile(dotenv_file):
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get('SECRET_KEY', default="test")
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-USE_LIVE_MAIL = int(os.environ.get('DEBUG', default=0))
-DEBUG = int(os.environ.get('DEBUG', default=1))
+USE_LIVE_MAIL = int(os.environ.get('DEBUG'))
+DEBUG = int(os.environ.get('DEBUG'))
 
 BACKEND_HOST = os.environ.get("BACKEND_HOST")
 FRONTEND_HOST = os.environ.get("FRONTEND_HOST")
@@ -211,3 +211,4 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+print(DATABASES)
